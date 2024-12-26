@@ -88,7 +88,7 @@ input:checked+.slider:before {
     display: flex;
     position: fixed;
     left: 50%;
-    bottom: 1em;
+    bottom: .5em;
     transform: translate(-50%);
     gap: .5em;
     list-style: none;

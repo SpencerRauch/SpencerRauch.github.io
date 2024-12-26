@@ -3,7 +3,6 @@ const html = document.querySelector('html');
 const body = document.querySelector("body");
 
 
-
 function toggle(){
     if (modeCheck.checked){
         html.style.setProperty("color-scheme", "light");

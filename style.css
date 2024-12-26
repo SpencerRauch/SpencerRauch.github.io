@@ -9,10 +9,6 @@ html {
     color-scheme: dark;
 }
 
-body {
-    -webkit-transition: .4s;
-    transition: .4s;
-}
 
 .modeSwitch {
     position: fixed;

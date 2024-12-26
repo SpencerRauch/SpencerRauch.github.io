@@ -50,11 +50,15 @@ html {
     content: "🌑";
     left: .3em;
     background-color: none;
+    -webkit-transition: .4s;
+    transition: .4s;
     /* border-radius: 50%; */
 }
 
 input:checked+.slider {
     background-color: lightgoldenrodyellow;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 input:focus+.slider {
@@ -66,6 +70,7 @@ input:checked+.slider:before {
     -webkit-transform: translateX(2em);
     -ms-transform: translateX(2em);
     transform: translateX(2em);
+
 }
 
 .section{

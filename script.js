@@ -1,14 +1,19 @@
 const modeCheck = document.getElementById("modeCheck")
+const html = document.querySelector('html');
 const body = document.querySelector("body");
 
 
+
 function toggle(){
-    console.log(modeCheck.checked);
     if (modeCheck.checked){
-        body.classList.add("light")
-        body.classList.remove("dark")
+        html.style.setProperty("color-scheme", "light");
     } else {
-        body.classList.add("dark")
-        body.classList.remove("light")
+        html.style.setProperty("color-scheme", "dark");
     }
+}
+
+
+function linkFunc(element){
+    console.log(element)
+    element.scrollIntoView({behavior:"smooth"});
 }

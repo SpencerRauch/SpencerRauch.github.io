@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spencer Rauch - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dark">
     <label class="modeSwitch">
         <input type="checkbox" id="modeCheck" onchange="toggle()">
         <span class="slider"></span>
     </label>
-<div class="landing">
-    <h1>Welcome</h1>
-</div>
-<div class="sectionTwo">
-    <h1>Section Two</h1>
-</div>
- <script src="script.js"></script>
+    <ul id="navButtons">
+        <li class="navlink" onclick="linkFunc(landing)">Top</li>
+        <li class="navlink" onclick="linkFunc(about)">About</li>
+        <li class="navlink" onclick="linkFunc(projects)">Projects</li>
+        <li class="navlink" onclick="linkFunc(contact)">Contact</li>
+    </ul>
+    <div id="landing" class="section">
+        <h1>Welcome</h1>
+    </div>
+    <div id="about" class="section">
+        <h1>About</h1>
+    </div>
+    <div id="projects" class="section">
+        <h1>Projects</h1>
+    </div>
+    <div id="contact" class="section">
+        <h1>Contact</h1>
+    </div>
+
+    <script src="script.js"></script>
+
 </html>

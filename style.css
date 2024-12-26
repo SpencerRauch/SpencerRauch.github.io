@@ -107,17 +107,17 @@ input:checked+.slider:before {
     color: light-dark(black,white)
 }
 
-#landing {
+#landing, #projects {
     background-color: light-dark(blanchedalmond,darkslategray);
     color: light-dark(darkslategrey,blanchedalmond);
 }
 
-#about {
+#about, #contact {
     background-color:  light-dark(aqua,#249D9F);
-    color: light-dark(#249D9F,aqua);
+    color: light-dark(darkslategray,darkslategray);
 }
-
+/* 
 #contact {
     background-color:  light-dark(yellow,#249D9F);
     color: light-dark(pink,aqua);
-}
+} */

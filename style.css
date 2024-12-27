@@ -150,7 +150,7 @@ input:checked+.slider:before {
     justify-content: center;
     text-align: left;
     font-weight: 500;
-    overflow:scroll;
+    overflow:auto;
 }
 
 .container{

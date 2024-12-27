@@ -136,6 +136,11 @@ input:checked+.slider:before {
     color: light-dark(var(--neutral-one),white);
 }
 
-#hunny {
-    max-height: 50%;
+#landing{
+    overflow:hidden;
 }
+
+#hunny {
+    max-width: 50%;
+}
+

@@ -149,6 +149,7 @@ input:checked+.slider:before {
     align-items: center;
     justify-content: center;
     text-align: right;
+    font-weight: 500;
 }
 
 #about_container h1{

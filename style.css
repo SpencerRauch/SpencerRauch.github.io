@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+
+   
+
+--bold-one: #294549;
+--bold-two: #4e7f90;
+--neutral-one: #4a807e;
+--neutral-two: #90C2b7;
+--comp: #BBD7DA;
+
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .1s;
+    transition: .1s;
     font-family: "Raleway", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -13,13 +29,6 @@
 html {
     color-scheme: light dark;
 }
-/* 
-
-#362e54,#5a5183,#868ebb,#7a7143,#ac9e74
-
-#fb7b0c,#fba70e,#f7dbc6,#fb925b,#cc2e05
-
-*/
 
 
 .modeSwitch {
@@ -49,7 +58,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: lightslategray;
+    background-color: var(--bold-one);
     border-radius: 1.5em;
     
 }
@@ -68,7 +77,7 @@ html {
 }
 
 input:checked+.slider {
-    background-color: lightgoldenrodyellow;
+    background-color: var(--comp);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -90,7 +99,7 @@ input:checked+.slider:before {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    border: 1px;
+    /* border: 2em solid; */
 }
 
 #navButtons {
@@ -111,20 +120,20 @@ input:checked+.slider:before {
     cursor: pointer;
     width: 5em;
     height: 2em;
-    border: 2px solid light-dark(black,white);
     border-radius: 3em;
-    background-color: light-dark(white,black);
-    color: light-dark(black,white)
+    background-color: light-dark(var(--comp),var(--bold-one));
+    font-weight: 500;
+    color: light-dark(var(--bold-two),var(--comp));
 }
 
 #landing, #projects {
-    background-color: light-dark(blanchedalmond,darkslategray);
-    color: light-dark(darkslategrey,blanchedalmond);
+    background-color: light-dark(white,black);
+    color: light-dark(var(--bold-two),white);
 }
 
 #about, #contact {
-    background-color:  light-dark(aqua,#249D9F);
-    color: light-dark(darkslategray,darkslategray);
+    background-color: light-dark(var(--neutral-two),var(--bold-two));
+    color: light-dark(var(--neutral-one),white);
 }
 /* 
 #contact {

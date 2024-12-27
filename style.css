@@ -95,10 +95,7 @@ input:checked+.slider:before {
 }
 
 .section{
-    display:flex;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
     /* border: 2em solid; */
 }
 
@@ -137,10 +134,37 @@ input:checked+.slider:before {
 }
 
 #landing{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     overflow:hidden;
 }
 
 #hunny {
     max-width: 50%;
 }
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+}
+
+#about_container h1{
+    margin-right: 1rem;
+}
+
+.float_text{
+    height: 100%;
+}
+
+#about_img{
+    margin: 1rem;
+    max-height: 49vh;
+    max-width: 49vw;
+    float: right;
+    shape-outside: polygon( 26% 0%, 22% 10%, 21.5% 20%, 23% 30%, 22% 50%, 16% 73%, 3.5% 84%, 3% 90%, 0% 95%, 0% 97%, 4% 100%, 100% 100%, 100% 0%);
+}
+
 

@@ -1,6 +1,11 @@
 const modeCheck = document.getElementById("modeCheck")
 const html = document.querySelector('html');
 const body = document.querySelector("body");
+const initialDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (!initialDark){
+    modeCheck.checked = true;
+}
 
 
 function toggle(){
@@ -13,6 +18,5 @@ function toggle(){
 
 
 function linkFunc(element){
-    console.log(element)
     element.scrollIntoView({behavior:"smooth"});
 }

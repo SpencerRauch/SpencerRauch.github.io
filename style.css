@@ -11,9 +11,19 @@
 }
 
 html {
-    color-scheme: dark;
+    color-scheme: light dark;
 }
+/* 
 
+#362e54,#5a5183,#868ebb,#7a7143,#ac9e74
+
+#fb7b0c,#fba70e,#f7dbc6,#fb925b,#cc2e05
+
+/* Array */
+
+
+
+*/
 
 .modeSwitch {
     position: fixed;

@@ -96,6 +96,7 @@ input:checked+.slider:before {
 
 .section{
     height: 100vh;
+    overflow: hidden;
     /* border: 2em solid; */
 }
 
@@ -137,7 +138,6 @@ input:checked+.slider:before {
     display:flex;
     justify-content: center;
     align-items: center;
-    overflow:hidden;
 }
 
 #hunny {
@@ -148,12 +148,17 @@ input:checked+.slider:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: right;
+    text-align: left;
     font-weight: 500;
+    overflow:scroll;
+}
+
+.container{
+    max-height: 100%;
 }
 
 #about_container h1{
-    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .float_text{
@@ -161,7 +166,7 @@ input:checked+.slider:before {
 }
 
 #about_img{
-    margin: 1rem;
+    margin: 1em 1em 0 1em;
     max-height: 49vh;
     max-width: 49vw;
     float: right;

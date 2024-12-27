@@ -135,8 +135,7 @@ input:checked+.slider:before {
     background-color: light-dark(var(--neutral-two),var(--bold-two));
     color: light-dark(var(--neutral-one),white);
 }
-/* 
-#contact {
-    background-color:  light-dark(yellow,#249D9F);
-    color: light-dark(pink,aqua);
-} */
+
+#hunny {
+    max-height: 50%;
+}

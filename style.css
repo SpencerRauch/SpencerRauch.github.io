@@ -371,7 +371,7 @@ input:checked+.slider:before {
     }
 
     #about_container p{
-        font: .5em;
+        font-size: 1em;
     }
 
     .contact_card {

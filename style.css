@@ -3,13 +3,13 @@
 
 :root {
 
-   
 
---bold-one: #294549;
---bold-two: #4e7f90;
---neutral-one: #4a807e;
---neutral-two: #90C2b7;
---comp: #BBD7DA;
+
+    --bold-one: #294549;
+    --bold-two: #4e7f90;
+    --neutral-one: #4a807e;
+    --neutral-two: #90C2b7;
+    --comp: #BBD7DA;
 
 
 }
@@ -61,11 +61,11 @@ html {
     bottom: 0;
     background-color: var(--bold-one);
     border-radius: 1.5em;
-    
+
 }
 
 .slider:before {
-    display:flex;
+    display: flex;
     position: absolute;
     justify-content: center;
     align-content: center;
@@ -95,7 +95,7 @@ input:checked+.slider:before {
 
 }
 
-.section{
+.section {
     height: 100vh;
     overflow: hidden;
     /* border: 2em solid; */
@@ -121,24 +121,26 @@ input:checked+.slider:before {
     width: 5em;
     height: 2em;
     border-radius: 3em;
-    background-color: light-dark(var(--comp),var(--bold-one));
+    background-color: light-dark(var(--comp), var(--bold-one));
     font-weight: 500;
-    color: light-dark(var(--bold-two),var(--comp));
+    color: light-dark(var(--bold-two), var(--comp));
     z-index: 10;
 }
 
-#landing, #projects {
-    background-color: light-dark(whitesmoke,black);
-    color: light-dark(var(--bold-two),var(--comp));
+#landing,
+#projects {
+    background-color: light-dark(whitesmoke, black);
+    color: light-dark(var(--bold-two), var(--comp));
 }
 
-#about, #contact {
-    background-color: light-dark(var(--neutral-two),var(--bold-two));
-    color: light-dark(var(--neutral-one),var(--comp));
+#about,
+#contact {
+    background-color: light-dark(var(--neutral-two), var(--bold-two));
+    color: light-dark(var(--neutral-one), var(--comp));
 }
 
-#landing{
-    display:flex;
+#landing {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -153,41 +155,41 @@ input:checked+.slider:before {
     justify-content: center;
     text-align: left;
     font-weight: 500;
-    overflow:auto;
+    overflow: auto;
 }
 
-.container{
+.container {
     max-height: 100%;
 }
 
-#about_container h1{
+#about_container h1 {
     margin-left: 1rem;
     font-size: 4em;
 }
 
-#about_container p{
+#about_container p {
     font-size: 2em;
 }
 
-.float_text{
+.float_text {
     height: 100%;
 }
 
-#about_img{
+#about_img {
     max-height: 44vh;
     max-width: 44vw;
     float: right;
     shape-outside: url('img/image2.png');
 }
 
-#about_img_left{
+#about_img_left {
     max-height: 44vh;
     max-width: 44vw;
     float: left;
     shape-outside: url('img/image4.png')
 }
 
-#contact{
+#contact {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,19 +203,21 @@ input:checked+.slider:before {
         justify-content: space-between;
         gap: .5em;
     }
-    .contact_card{
+
+    .contact_card {
         width: 100%;
     }
 
-    .contact_icon{
+    .contact_icon {
         height: 1vh;
     }
 
-    .spacer{
-        height:8em;
+    .spacer {
+        height: 8em;
     }
 }
-.contact_card{
+
+.contact_card {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -224,24 +228,146 @@ input:checked+.slider:before {
     text-decoration: none;
 }
 
-.contact_card p{
+.contact_card p {
     margin-top: 2em;
     display: none;
 }
 
-.contact_icon{
+.contact_icon {
     cursor: pointer;
     z-index: 1;
     height: 20vh;
     filter: brightness(0) saturate(100%);
 }
 
-.contact_icon:hover{
+.contact_icon:hover {
     transform: scale(1.1);
 }
 
 
 
-.mb{
+.mb {
     margin-bottom: 2em;
+}
+
+
+#projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+}
+/* begin w3 paste*/
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    height: 90%;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow-container h1{
+    text-align: center;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: light-dark(var(--bold-two), var(--comp));
+    position: absolute;
+    bottom: 4em;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 .5em;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* end w3 paste */
+
+.col_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    height: 100%;
+}
+
+.slide_left img{
+    max-width: 40vw;
+}
+.slide_left{
+    flex:1;
+}
+.slide_right{
+    flex: 1;
 }

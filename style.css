@@ -197,25 +197,7 @@ input:checked+.slider:before {
     gap: 3em;
 }
 
-@media (max-width: 960px) {
-    #contact {
-        flex-direction: column;
-        justify-content: space-between;
-        gap: .5em;
-    }
 
-    .contact_card {
-        width: 100%;
-    }
-
-    .contact_icon {
-        height: 1vh;
-    }
-
-    .spacer {
-        height: 8em;
-    }
-}
 
 .contact_card {
     height: 100%;
@@ -370,4 +352,33 @@ input:checked+.slider:before {
 }
 .slide_right{
     flex: 1;
+}
+
+.proj_space{
+    height: 1.5em;
+}
+/* responsiveness */
+
+@media (max-width: 960px) {
+    #contact {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: .5em;
+    }
+
+    .contact_card {
+        width: 100%;
+    }
+
+    .spacer {
+        height: 8em;
+    }
+
+    .col_flex{
+        flex-direction: column;
+    }
+
+    .slide_left img{
+        max-height: 40vh;
+    }
 }

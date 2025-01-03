@@ -145,6 +145,8 @@ input:checked+.slider:before {
     align-items: center;
 }
 
+
+
 #hunny {
     max-width: 50%;
 }
@@ -363,6 +365,10 @@ input:checked+.slider:before {
 /* responsiveness */
 
 @media (max-width: 960px) {
+    .landing_left h2{
+        font-size: 1em;
+    }
+
     #contact {
         flex-direction: column;
         justify-content: space-between;
@@ -379,7 +385,7 @@ input:checked+.slider:before {
     }
 
     .spacer {
-        height: 8em;
+        height: 10em;
     }
 
     .col_flex{

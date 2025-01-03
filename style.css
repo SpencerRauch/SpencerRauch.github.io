@@ -158,6 +158,7 @@ input:checked+.slider:before {
     text-align: left;
     font-weight: 500;
     overflow: auto;
+    padding: 0 2em;
 }
 
 .container {
@@ -376,12 +377,16 @@ input:checked+.slider:before {
         gap: .5em;
     }
 
+    #about {
+        padding: .5em;
+    }
+
     #about_container p{
         font-size: 1em;
     }
 
     .contact_card {
-        width: 100%;
+        width: fit-content%;
     }
 
     .spacer {

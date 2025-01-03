@@ -348,6 +348,9 @@ input:checked+.slider:before {
     max-width: 40vw;
 }
 .slide_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex:1;
 }
 .slide_right{
@@ -363,7 +366,12 @@ input:checked+.slider:before {
     #contact {
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         gap: .5em;
+    }
+
+    #about_container p{
+        font: .5em;
     }
 
     .contact_card {

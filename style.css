@@ -386,7 +386,7 @@ input:checked+.slider:before {
     }
 
     .contact_card {
-        width: fit-content%;
+        width: fit-content;
     }
 
     .spacer {

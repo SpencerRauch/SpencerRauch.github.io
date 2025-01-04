@@ -10,19 +10,19 @@ if (!initialDark){
 
 console.log(contactIcons.length);
 
-contactIcons.forEach(icon => {
-    icon.addEventListener("mouseenter", () => {
-        console.log("entered");
-        console.log(icon.nextElementSibling);
-        icon.nextElementSibling.style.setProperty("display", "block");
-    });
-});
+// contactIcons.forEach(icon => {
+//     icon.addEventListener("mouseenter", () => {
+//         console.log("entered");
+//         console.log(icon.nextElementSibling);
+//         icon.nextElementSibling.style.setProperty("display", "block");
+//     });
+// });
 
-contactIcons.forEach(icon => {
-    icon.addEventListener("mouseleave", () => {
-        icon.nextElementSibling.style.setProperty("display", "none");
-    });
-});
+// contactIcons.forEach(icon => {
+//     icon.addEventListener("mouseleave", () => {
+//         icon.nextElementSibling.style.setProperty("display", "none");
+//     });
+// });
 
 function toggle(){
     if (modeCheck.checked){

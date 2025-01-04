@@ -407,10 +407,6 @@ input:checked+.slider:before {
         width: fit-content;
     }
 
-    .spacer {
-        height: 10em;
-    }
-
     .col_flex{
         flex-direction: column;
     }

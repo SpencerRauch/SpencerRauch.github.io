@@ -34,11 +34,11 @@ html {
 .modeSwitch {
     position: fixed;
     display: inline-block;
-    width: 4em;
-    height: 2em;
+    width: 3.2em;
+    height: 1.6em;
     right: 1em;
     top: 1em;
-    border-radius: 1.5em;
+    border-radius: 1.2em;
     z-index: 11;
 
 }
@@ -56,7 +56,7 @@ html {
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 0;
+    left: .4em;
     right: 0;
     bottom: 0;
     background-color: var(--bold-one);
@@ -70,7 +70,7 @@ html {
     justify-content: center;
     align-content: center;
     content: "🌑";
-    left: .3em;
+    left: .1em;
     background-color: none;
     -webkit-transition: .4s;
     transition: .4s;
@@ -89,9 +89,9 @@ input:focus+.slider {
 
 input:checked+.slider:before {
     content: "🌕";
-    -webkit-transform: translateX(2em);
-    -ms-transform: translateX(2em);
-    transform: translateX(2em);
+    -webkit-transform: translateX(1.3em);
+    -ms-transform: translateX(1.3em);
+    transform: translateX(1.3em);
 
 }
 
@@ -159,7 +159,7 @@ input:checked+.slider:before {
     text-align: left;
     font-weight: 500;
     overflow: auto;
-    padding: 0 2em;
+    padding: 0 8em;
 }
 
 .container {
@@ -365,6 +365,7 @@ input:checked+.slider:before {
 
 .slide_left img{
     max-width: 40vw;
+    max-height: 76vh;
 }
 .slide_left{
     display: flex;
@@ -395,7 +396,7 @@ input:checked+.slider:before {
     }
 
     #about {
-        padding: .5em;
+        padding: 1em;
     }
 
     #about_container p{
@@ -433,4 +434,8 @@ input:checked+.slider:before {
 
 .tl {
     text-align: left;
+}
+
+.tc {
+    text-align: center;
 }

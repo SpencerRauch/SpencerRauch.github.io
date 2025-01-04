@@ -408,7 +408,7 @@ input:checked+.slider:before {
     }
 
     .spacer {
-        height: 2em;
+        height: 10em;
     }
 
     .col_flex{

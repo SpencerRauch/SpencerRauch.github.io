@@ -101,7 +101,7 @@ input:checked+.slider:before {
     /* border: 2em solid; */
 }
 
-#navButtons {
+#nav_buttons {
     display: flex;
     position: fixed;
     left: 50%;
@@ -385,6 +385,10 @@ input:checked+.slider:before {
 @media (max-width: 960px) {
     .landing_left h2{
         font-size: 1em;
+    }
+
+    #nav_buttons {
+        bottom: 1.5em;
     }
 
     #contact {

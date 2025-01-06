@@ -369,12 +369,17 @@ input:checked+.slider:before {
 }
 .slide_left{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex:1;
 }
 .slide_right{
     flex: 1;
+}
+
+.slide_right p{
+    margin-bottom: 2em;
 }
 
 .proj_space{

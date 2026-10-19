@@ -1,65 +1,53 @@
-const modeCheck = document.getElementById("modeCheck")
-const html = document.querySelector('html');
-const body = document.querySelector("body");
-const initialDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const contactIcons = document.querySelectorAll(".contact_icon");
+// Theme: an inline snippet in <head> applies the saved theme before paint;
+// this wires up the toggle button and keeps it in sync.
+(function () {
+    const root = document.documentElement;
+    const themeBtn = document.querySelector(".theme-btn");
 
-if (!initialDark){
-    modeCheck.checked = true;
-}
-
-console.log(contactIcons.length);
-
-// contactIcons.forEach(icon => {
-//     icon.addEventListener("mouseenter", () => {
-//         console.log("entered");
-//         console.log(icon.nextElementSibling);
-//         icon.nextElementSibling.style.setProperty("display", "block");
-//     });
-// });
-
-// contactIcons.forEach(icon => {
-//     icon.addEventListener("mouseleave", () => {
-//         icon.nextElementSibling.style.setProperty("display", "none");
-//     });
-// });
-
-function toggle(){
-    if (modeCheck.checked){
-        html.style.setProperty("color-scheme", "light");
-    } else {
-        html.style.setProperty("color-scheme", "dark");
+    function currentTheme() {
+        if (root.dataset.theme) return root.dataset.theme;
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
-}
 
+    function syncLabel() {
+        if (!themeBtn) return;
+        const next = currentTheme() === "dark" ? "light" : "dark";
+        themeBtn.setAttribute("aria-label", "Switch to " + next + " theme");
+    }
 
-function linkFunc(element){
-    element.scrollIntoView({behavior:"smooth"});
-}
+    // Make the attribute explicit so CSS icon swaps work for system-dark users too
+    root.dataset.theme = currentTheme();
+    syncLabel();
 
-let slideIndex = 1;
-showSlides(slideIndex);
+    if (themeBtn) {
+        themeBtn.addEventListener("click", function () {
+            const next = currentTheme() === "dark" ? "light" : "dark";
+            root.dataset.theme = next;
+            try { localStorage.setItem("theme", next); } catch (e) { /* storage unavailable */ }
+            syncLabel();
+        });
+    }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+    // Mobile navigation
+    const nav = document.querySelector(".nav");
+    const menuBtn = document.querySelector(".menu-btn");
+    if (nav && menuBtn) {
+        menuBtn.addEventListener("click", function () {
+            const open = nav.classList.toggle("open");
+            menuBtn.setAttribute("aria-expanded", String(open));
+        });
+        nav.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && nav.classList.contains("open")) {
+                nav.classList.remove("open");
+                menuBtn.setAttribute("aria-expanded", "false");
+                menuBtn.focus();
+            }
+        });
+        nav.querySelectorAll("ul a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                nav.classList.remove("open");
+                menuBtn.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+})();

@@ -4,150 +4,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spencer Rauch - Software Engineer</title>
+    <title>Spencer Rauch — Full-stack software engineer</title>
+    <meta name="description" content="Spencer Rauch is a full-stack software engineer building and maintaining production software across React frontends, NestJS and .NET APIs, integrations, and data systems.">
+    <link rel="canonical" href="https://spencergr.com/">
+    <meta name="theme-color" content="#2b6b68">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Spencer Rauch">
+    <meta property="og:title" content="Spencer Rauch — Full-stack software engineer">
+    <meta property="og:description" content="Full-stack software engineer building practical, reliable systems: frontend applications, APIs, integrations, and data.">
+    <meta property="og:url" content="https://spencergr.com/">
+    <meta property="og:image" content="https://spencergr.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Spencer Rauch — Full-stack software engineer building practical, reliable systems.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) { }</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Spencer Rauch",
+        "url": "https://spencergr.com/",
+        "jobTitle": "Full-stack Software Engineer",
+        "email": "mailto:rauchs@gmail.com",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Colorado Technical University"
+        },
+        "knowsAbout": ["React", "TypeScript", "NestJS", "C#", ".NET", "PostgreSQL", "SQL Server", "API integrations"],
+        "sameAs": [
+            "https://www.linkedin.com/in/spencer-rauch/",
+            "https://github.com/SpencerRauch"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-    <label class="modeSwitch">
-        <input type="checkbox" id="modeCheck" onchange="toggle()">
-        <span class="slider"></span>
-    </label>
-    <ul id="nav_buttons">
-        <li class="navlink" onclick="linkFunc(landing)">Top</li>
-        <li class="navlink" onclick="linkFunc(about)">About</li>
-        <li class="navlink" onclick="linkFunc(projects)">Projects</li>
-        <li class="navlink" onclick="linkFunc(contact)">Contact</li>
-    </ul>
-    <div id="landing" class="section">
-        <div class="landing_left">
-            <h1>Spencer Rauch</h1>
-            <h2>Software Engineer</h2>
-            <h2>Empathetic Leader</h2>
-            <h2>Problem Solver</h2>
-        </div>
-        <img src="img/image0.png" alt="dog" id="hunny">
-    </div>
-    <div id="about" class="section">
-        <div class="container tc" id="about_container">
-            <img src="img/image2.png" alt="dog" id="about_img">
-            <p>
-                Hello! I'm Spencer Rauch, a passionate and dedicated software engineer with a strong foundation in computer science and software engineering. I graduated from Colorado Technical University in October 2024 with a Bachelor of Science in Computer Science, concentrating on Software Engineering, and achieved a CGPA of 3.99.
-                My most recent experience has been as a software development instructor, where for almost three years I had the privilege of mentoring and guiding students through their coding journeys. This role has honed my leadership and communication skills, allowing me to inspire and empower the next generation of developers.
-            </p>
-            <img src="img/image4.png" alt="dog" id="about_img_left">
-            <p>
-                I am proficient in a wide range of technologies, including Flask, Python, C#, .NET MVC, Java, React, Node.js, CSS, HTML, Bootstrap, MySQL, and MongoDB. With full stack experience, my technical expertise, combined with my ability to manage projects and lead teams, makes me a versatile and valuable asset in any development environment.
-                I am passionate about continuous learning and enjoy tackling challenging problems to create innovative solutions. Whether it's developing robust software applications or managing complex projects, I am committed to delivering high-quality results and driving success.
-            </p>
-                
-        </div>
-    </div>
-    <div id="projects" class="section">
-        <div class="slideshow-container">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-            <h1>Personal Projects</h1>
-            <div class="mySlides fade">
-                <div class="col_flex">
-                    <div class="slide_left">
-                        <a href="img/bookstore.png"><img src="img/bookstore.png" alt="Bookstore Management System ERD" class="slide_img"></a>
-                        <a href="img/bookstore.png">Click to Zoom</a>
-                    </div>
-                    <div class="slide_right">
-                        <h1>Bookstore Inventory Management System</h1>
-                        <p>The Bookstore Inventory Management System is a web application designed to streamline inventory control, order processing, and employee access management for a bookstore. The system features different access levels for employees, ensuring that only authorized personnel can perform specific tasks. Please note live site may need to be refreshed, it is hosted on a free tier.</p>
-                        <h2>Tech Used</h2>
-                        <p>Flask (python), jinja2, MySQL, bcrypt, pythonanywhere (hosting)</p>
-                        <h2>Links</h2>
-                        <a href="https://bookstoreinventory.pythonanywhere.com/">Live Site</a> |
-                        <a href="https://github.com/SpencerRauch/bookstore_prod">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mySlides fade">
-                <div class="col_flex">
-                    <div class="slide_left">
-                        <a href="https://spencergr.azurewebsites.net/"><img src="img/admin_panel.png" alt="Screenshot of Course Admin site" class="slide_img"></a>
-                        <a href="https://spencergr.azurewebsites.net/">Click to Visit</a>
-                    </div>
-                    <div class="slide_right">
-                        <h1>Course Admin Panel</h1>
-                        <p>This project was created to demonstrate the extensive use of ViewModels in .NET MVC to avoid ViewBag and ensure safe typing.</p>
-                        <h2>Tech Used</h2>
-                        <p>.NET MVC (C#), Entity Framework Core, ViewModels, Session Management, SQL Server, Azure</p>
-                        <h2>Links</h2>
-                        <a href="https://spencergr.azurewebsites.net/">Live Site</a> |
-                        <a href="https://github.com/SpencerRauch/CourseAdmin">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mySlides fade">
-                <div class="col_flex">
-                    <div class="slide_left">
-                        <a href="https://flaskcasino.pythonanywhere.com/"></a><img src="img/flaskcasino.png" alt="dog" class="slide_img"></a>
-                        <a href="https://flaskcasino.pythonanywhere.com/">Click to Play!</a>
-                    </div>
-                    <div class="slide_right">
-                        <h1>Flask Casino</h1>
-                        <p>A persistent online casino featuring three games: Black Jack, Video Poker, and Roulette under one user account. Users may request a small amount of chips if they run out. There is also an allowance that can be claimed every 4 hours.</p>
-                        <h2>Tech Used</h2>
-                        <p>Flask (python), jinja2, MySQL, bcrypt, jsonpickle, pythonanywhere (hosting)</p>
-                        <h2>Links</h2>
-                        <a href="https://flaskcasino.pythonanywhere.com/">Live Site</a> |
-                        <a href="https://github.com/SpencerRauch/flaskjack">GitHub</a>
-                    </div>
-                </div>
-            </div>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="./">spencer<span>.</span>rauch</a>
+            <nav class="nav" aria-label="Main">
+                <ul id="nav-list">
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="icon-btn theme-btn" type="button" aria-label="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+                </button>
+                <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-            <div class="mySlides fade">
-                <div class="col_flex">
-                    <div class="slide_left">
-                        <img src="img/image5.jpeg" alt="dog" class="slide_img">
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="wrap">
+                <p class="eyebrow">Full-stack software engineer</p>
+                <h1 id="hero-title">Software that connects the pieces.</h1>
+                <p class="lede">I'm Spencer, a full-stack software engineer working across frontend applications, APIs, and data systems. I'm at my best when a workflow crosses several services, requires careful data modeling, and needs to hold up in production.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="work.html">See the work</a>
+                    <a class="btn btn-secondary" href="resume.pdf">Download resume (PDF)</a>
+                </div>
+                <ul class="hero-meta">
+                    <li>React · TypeScript · NestJS · C#/.NET</li>
+                    <li>PostgreSQL · SQL Server</li>
+                    <li>Production engineer since 2025</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="work-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Selected work</p>
+                    <h2 id="work-title">Systems people rely on every day</h2>
+                    <p>From appointment scheduling and calendar synchronization to estimate workflows and operational reporting. These case studies cover the problem, my part in it, and how the work was approached. Details are kept general to protect my client's internal systems.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3><a href="work.html#scheduling">Scheduling and messaging platform</a></h3>
+                        <p>Appointment booking and administration kept in two-way sync with staff Outlook calendars, with role-aware permissions, recurring schedules, and automated SMS and email touchpoints.</p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>React</li><li>NestJS</li><li>PostgreSQL</li><li>Cronofy</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3><a href="work.html#estimates">Cross-system estimate and survey platform</a></h3>
+                        <p>Multi-step estimate forms, structured site surveys, and pricing tools spanning a React client, a NestJS integration API, and a C#/.NET core API.</p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>TypeScript</li><li>NestJS</li><li>C#/.NET</li><li>SQL Server</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3><a href="work.html#reliability">Production reliability and performance</a></h3>
+                        <p>Tracking down database connection exhaustion, a slow frontend build, and requests retried even though they could never succeed, then fixing the root cause and confirming the fix in production.</p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>Prisma</li><li>NestJS</li><li>Tailwind</li><li>Debugging</li>
+                        </ul>
+                    </article>
+                </div>
+                <p class="note"><a href="work.html">All case studies, plus earlier projects →</a></p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="cap-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Capabilities</p>
+                    <h2 id="cap-title">What I work with</h2>
+                    <p>These are the tools I use in production day to day. Things I know mainly from coursework or earlier projects are listed separately.</p>
+                </div>
+                <div class="cap-grid">
+                    <div>
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>TypeScript / JavaScript</li>
+                            <li>Vite, Redux</li>
+                            <li>Tailwind, HTML/CSS</li>
+                        </ul>
                     </div>
-                    <div class="slide_right">
-                        <h1>Under Construction!</h1>
-                        <p>I'm working on formatting more of my projects for this page. For now, take a look at me in the early stages of building my home office! Having dedicated work space at home enables total focus.</p>
-                        <h2>Tech Used</h2>
-                        <p>Cedar, Hammer, Power drill</p>
-                        <h2>Links</h2>
-                        <p>Coming Soon</p>
+                    <div>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>NestJS, Node.js</li>
+                            <li>C#/.NET, ASP.NET Core</li>
+                            <li>REST APIs, webhooks</li>
+                            <li>OAuth, role-based access</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Data</h3>
+                        <ul>
+                            <li>PostgreSQL, SQL Server</li>
+                            <li>Prisma, Dapper</li>
+                            <li>Redis</li>
+                            <li>Backfills and data reconciliation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Delivery</h3>
+                        <ul>
+                            <li>Git, CI/CD</li>
+                            <li>AWS, Cloudflare</li>
+                            <li>Background jobs, third-party integrations</li>
+                            <li>Production debugging</li>
+                        </ul>
                     </div>
                 </div>
+                <p class="note">Also: Python, Java, and MySQL from my degree, teaching, and earlier projects.</p>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-            
+        </section>
+
+        <section class="section" aria-labelledby="about-title">
+            <div class="wrap split">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2 id="about-title">Operations, then teaching, then engineering</h2>
+                </div>
+                <div>
+                    <p>I spent thirteen years in warehouse operations before going back for a computer science degree, which I finished summa cum laude in 2024. Along the way I taught full-stack web development for three years, first as a teaching assistant and then as an instructor.</p>
+                    <p>Since May 2025 I've been a contract software engineer, building and maintaining business applications that span frontends, APIs, third-party integrations, and databases. Teaching still shapes how I work: I write things down, explain the tradeoffs, and leave code that the next person can follow.</p>
+                    <p><a href="about.html">More about me and my experience →</a></p>
+                </div>
             </div>
-            
-            <div style="text-align:center" id="dots">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-              <span class="dot" onclick="currentSlide(4)"></span> 
+        </section>
+
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Contact</p>
+                    <h2 id="contact-title">Get in touch</h2>
+                    <p>I'm open to full-stack and backend-focused roles, and to contract work on business software that needs to be scoped, built, and maintained.</p>
+                </div>
+                <ul class="contact-list">
+                    <li>
+                        <a href="mailto:rauchs@gmail.com">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.5 6.5 8.5 6.5 8.5-6.5" /></svg>
+                            <span><span class="label">Email</span><span class="value">rauchs@gmail.com</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/spencer-rauch/">
+                            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" /></svg>
+                            <span><span class="label">LinkedIn</span><span class="value">in/spencer-rauch</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/SpencerRauch">
+                            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
+                            <span><span class="label">GitHub</span><span class="value">SpencerRauch</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="resume.pdf">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5" /></svg>
+                            <span><span class="label">Resume</span><span class="value">Download PDF</span></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="proj_space"></div>
-    </div>
-    <div id="contact" class="section">
-        <a class="contact_card" href='https://www.linkedin.com/in/spencer-rauch/'>
-            <img src="img/linkedin.svg" alt="linkedin" class="contact_icon">
-            <p>linkedin.com/in/spencer-rauch</p>
-        </a>
-        <a class="contact_card" href="https://www.github.com/SpencerRauch">
-            <img src="img/github.svg" alt="github" class="contact_icon" />
-            <p>github.com/SpencerRauch</p>
-        </a>
-        <a class="contact_card" href="https://www.discordapp.com/users/734419420210004018">
-            <img src="img/discord.svg" alt="discord" class="contact_icon">
-            <p>spencergr</p>
-        </a>
-        <a class="contact_card" href="mailto:rauchs@gmail.com">
-            <img src="img/email.svg" alt="email" class="contact_icon">
-            <p>rauchs@gmail.com</p>
-        </a>
-        <div class="spacer"></div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>© 2026 Spencer Rauch</p>
+            <ul>
+                <li><a href="mailto:rauchs@gmail.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/spencer-rauch/">LinkedIn</a></li>
+                <li><a href="https://github.com/SpencerRauch">GitHub</a></li>
+                <li><a href="https://www.discordapp.com/users/734419420210004018">Discord</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
+</body>
 
 </html>

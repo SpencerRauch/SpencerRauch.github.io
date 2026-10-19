@@ -58,10 +58,10 @@
                 <h1 id="page-title">Case studies</h1>
                 <p class="lede">From appointment scheduling and calendar synchronization to estimate workflows and operational reporting, I build systems people rely on every day. Most of this work is internal business software for a single client, so these write-ups describe the problems and the approach without exposing data, screenshots, or proprietary code.</p>
                 <ol class="toc">
-                    <li><a href="#scheduling"><span class="num">01</span>Scheduling and messaging platform</a></li>
-                    <li><a href="#estimates"><span class="num">02</span>Cross-system estimate and survey platform</a></li>
-                    <li><a href="#integration"><span class="num">03</span>Service operations data integration</a></li>
-                    <li><a href="#reliability"><span class="num">04</span>Production reliability and performance</a></li>
+                    <li><a href="#scheduling"><span class="num">01</span>Scheduling and messaging platform<span class="sub">Two-way Outlook sync, admin calendar, automated messaging</span></a></li>
+                    <li><a href="#estimates"><span class="num">02</span>Cross-system estimate and survey platform<span class="sub">Multi-step forms across React, NestJS, and .NET</span></a></li>
+                    <li><a href="#integration"><span class="num">03</span>Service operations data integration<span class="sub">Six-tenant sync and classification pipeline</span></a></li>
+                    <li><a href="#reliability"><span class="num">04</span>Production reliability and performance<span class="sub">Connection pools, build times, wasted retries</span></a></li>
                 </ol>
             </div>
         </section>
@@ -77,23 +77,23 @@
                         <li>React</li><li>TypeScript</li><li>NestJS</li><li>PostgreSQL</li><li>Prisma</li><li>Cronofy</li><li>Outlook</li><li>FullCalendar</li>
                     </ul>
                 </div>
+                <dl class="glance">
+                    <div><dt>My role</dt><dd>Built the scheduling service, its calendar integration, and its admin tools from the first version in May 2025, building on business rules from the earlier scheduler. I still maintain them.</dd></div>
+                    <div><dt>Scope</dt><dd>React admin UI, NestJS API, PostgreSQL, two-way Outlook sync through Cronofy, SMS and email.</dd></div>
+                    <div><dt>What changed</dt><dd>Bookable availability reflects staff calendars in real time, and staff manage schedules from one admin calendar.</dd></div>
+                </dl>
                 <div class="case-body">
                     <div>
                         <h3>Problem</h3>
                         <p>Customers and staff both book appointments, but the people doing the visits manage their days in Outlook. Availability has to reflect both the published schedule and whatever is already on someone's calendar. A change made on either side has to show up on the other quickly and correctly, across time zones and for both virtual and in-home appointments.</p>
 
-                        <h3>My role</h3>
-                        <p>I was an early primary implementer of the new scheduling and administration modules, starting in May 2025, and I've kept maintaining and extending them since. I didn't originate the organization's earlier scheduler or all of its business rules. My part was the newer service, its admin tooling, and the calendar integration.</p>
-
                         <h3>Approach</h3>
                         <ul>
-                            <li>Built the base model first: locations with guarded CRUD and validation, services, schedules, and recurring hours, including different time zone requirements for virtual and in-home services.</li>
-                            <li>Generated bookable slots from those rules, with tests around the edge cases.</li>
-                            <li>Connected staff calendars through Cronofy: the OAuth flow, calendar connection management, and webhook channels. Calendar events create, update, and remove appointments.</li>
+                            <li>Modeled locations, services, schedules, and recurring hours, including time zone rules for virtual and in-home services, and generated bookable slots from them, with tests around the edge cases.</li>
+                            <li>Connected staff calendars through Cronofy (OAuth, calendar connections, webhook channels), so calendar events create, update, and remove appointments.</li>
                             <li>Invalidated cached availability whenever an appointment changes, so customers aren't offered a slot that was just taken.</li>
-                            <li>Built an admin calendar view with drag-to-reschedule, drive times, recurring schedules, time zone selection, and role-aware permissions.</li>
-                            <li>Added guardrails, such as blocking a schedule from going live until a calendar is linked, enforced in both the API and the UI, plus live conflict checks as staff enter appointment times.</li>
-                            <li>Recorded scheduling events in an audit trail, and added appointment confirmations, customer link delivery, and automated SMS and email touchpoints.</li>
+                            <li>Built an admin calendar with drag-to-reschedule, drive times, conflict checks, and role-aware permissions.</li>
+                            <li>Added an audit trail, appointment confirmations, and automated SMS and email touchpoints.</li>
                         </ul>
                     </div>
                     <div>
@@ -150,9 +150,6 @@
                             <li>Time zones are part of the data model, not a display detail. Virtual and in-home services have different requirements.</li>
                             <li>Invalid states, like an active schedule with no linked calendar, are blocked in both the API and the UI so they can't reach production.</li>
                         </ul>
-
-                        <h3>Outcome</h3>
-                        <p>The service went from an initial scheduling view in May 2025 to a platform with live two-way calendar sync, admin tooling, and automated customer messaging. I continue to maintain and extend it.</p>
                     </div>
                 </div>
             </div>
@@ -169,23 +166,22 @@
                         <li>React</li><li>TypeScript</li><li>NestJS</li><li>C#/.NET</li><li>ASP.NET Core</li><li>SQL Server</li>
                     </ul>
                 </div>
+                <dl class="glance">
+                    <div><dt>My role</dt><dd>On a team building the platform, built features across the React UI, NestJS API, and .NET API, and delivered the October 2026 form redesign.</dd></div>
+                    <div><dt>Scope</dt><dd>Four repositories: customer and sales-rep forms, site surveys and photos, load sizing, pricebook, payment schedules.</dd></div>
+                    <div><dt>What changed</dt><dd>Estimates can be saved and resumed, photos can be taken on a phone mid-form, and drafts and records from older form versions keep working.</dd></div>
+                </dl>
                 <div class="case-body">
                     <div>
                         <h3>Problem</h3>
                         <p>Quoting a home standby generator needs a lot of structured information: what the customer wants to power, what the site looks like, which unit fits the load, current pricing, and how payment will be scheduled. Customers and sales reps both fill parts of it in, often over several sessions. The data is spread across a TypeScript integration layer and a .NET core API, and it has to stay consistent as forms change.</p>
 
-                        <h3>My role</h3>
-                        <p>I contributed across all three layers (the React UI, the NestJS integration API, and the .NET core API) as part of a team. In October 2026 I delivered a redesign of the estimate forms that touched four repositories. Other engineers own other parts of the platform.</p>
-
                         <h3>Approach</h3>
                         <ul>
-                            <li>Built multi-step customer and sales-rep estimate forms with saved drafts, so someone can stop and pick up later.</li>
-                            <li>Kept saved drafts compatible across form versions, so drafts started before a redesign still load and submit correctly.</li>
+                            <li>Built multi-step customer and sales-rep estimate forms with saved drafts that stay compatible across form versions.</li>
                             <li>Implemented load calculations that feed generator selection.</li>
-                            <li>Added structured site surveys with photos, including a "text me the link" handoff so someone filling out the form on a computer can take the photos on their phone.</li>
+                            <li>Added structured site surveys with photos, including a "text me the link" handoff so someone on a computer can take the photos on their phone.</li>
                             <li>Built pricebook and payment-schedule administration in the React admin console, with role-restricted pricebook editing.</li>
-                            <li>Added revision checks on draft saves. A tab or device holding an older copy of the form gets a clear "stale draft" response instead of silently overwriting newer work.</li>
-                            <li>Made reporting version-aware, so records from older form versions still read correctly.</li>
                         </ul>
                     </div>
                     <div>
@@ -238,9 +234,6 @@
                             <li>The phone handoff created a new failure mode: the customer's computer, still open on an older copy, could overwrite the photos they had just added from their phone. Every save carries the revision it was based on, and the server refuses saves based on an outdated revision.</li>
                             <li>Uploaded photos are scoped to the lead they belong to and validated server-side, so the public form can't be used to reach other files.</li>
                         </ul>
-
-                        <h3>Outcome</h3>
-                        <p>The October 2026 redesign shipped across all four repositories with saved-draft compatibility, phone photo handoff, and version-aware reporting in place.</p>
                     </div>
                 </div>
             </div>
@@ -257,13 +250,15 @@
                         <li>ServiceTitan API</li><li>NestJS</li><li>TypeScript</li><li>PostgreSQL</li><li>Background jobs</li><li>React</li>
                     </ul>
                 </div>
+                <dl class="glance">
+                    <div><dt>My role</dt><dd>Built the integration end to end, from the first API connection to the reporting UI. Ported a colleague's equipment and membership classification rules into the pipeline.</dd></div>
+                    <div><dt>Scope</dt><dd>Six tenants: incremental sync, backfills, a daily classification pipeline, query APIs, reporting, and CSV exports.</dd></div>
+                    <div><dt>What changed</dt><dd>Previously missing inactive customers now sync with their equipment history, and equipment and memberships are classified for reporting.</dd></div>
+                </dl>
                 <div class="case-body">
                     <div>
                         <h3>Problem</h3>
                         <p>Service history lived in ServiceTitan across six tenants. Internal reporting was missing customers and couldn't reliably tell which equipment was a generator, which service visits were maintenance, or which customers were covered by a maintenance plan or warranty.</p>
-
-                        <h3>My role</h3>
-                        <p>I built the integration from the first API connection onward: synchronization, backfills, the daily processing pipeline, query APIs, and the reporting UI. The equipment and membership-type classification rules came from a colleague's existing implementation. I ported them into the shared API and wired them into the pipeline. The rules themselves are theirs.</p>
 
                         <h3>Approach</h3>
                         <ul>
@@ -272,13 +267,6 @@
                             <li>Combined the classification steps (equipment, service activity, membership types, warranty status) into one ordered daily pipeline, with a shared lock and a "last updated" freshness indicator in the admin UI.</li>
                             <li>Added chunked seeding so large backfills could run on a smaller staging database without dropping connections, leaving production behavior unchanged.</li>
                             <li>Built reporting UI, CSV exports with stable IDs for reconciliation, and a generator-unit browser for internal users.</li>
-                        </ul>
-
-                        <h3>Results</h3>
-                        <ul>
-                            <li>Inactive customers, along with the equipment and service history they own, now come through the sync instead of silently going missing.</li>
-                            <li>Membership types across every tenant are classified as maintenance, warranty, or monitoring, and plan records were backfilled and checked in staging before production.</li>
-                            <li>Internal users can browse generator units, filter by membership, and export CSVs with stable IDs for reconciliation.</li>
                         </ul>
                     </div>
                     <div>
@@ -335,10 +323,15 @@
                     <h2 id="reliability-title">Production reliability and performance</h2>
                     <p class="lede">Three problems that each had an obvious workaround and a less obvious root cause. The method was the same each time.</p>
                 </div>
+                <dl class="glance">
+                    <div><dt>My role</dt><dd>Diagnosed and fixed each issue, from reproduction to the deployed fix.</dd></div>
+                    <div><dt>Scope</dt><dd>NestJS and Prisma backend, React and Tailwind build pipeline, service-to-service error handling.</dd></div>
+                    <div><dt>What changed</dt><dd>One shared connection pool per instance, a build that skips unused CSS, and invalid requests that fail once instead of retrying.</dd></div>
+                </dl>
 
                 <ol class="method" aria-label="Debugging method">
                     <li><strong>Reproduce</strong>Make it happen on demand.</li>
-                    <li><strong>Measure</strong>Get a number, not a feeling.</li>
+                    <li><strong>Measure</strong>Find where it actually breaks.</li>
                     <li><strong>Trace</strong>Follow it to the root cause.</li>
                     <li><strong>Fix</strong>Change the cause, not the symptom.</li>
                     <li><strong>Verify</strong>Confirm it in production.</li>
@@ -354,7 +347,7 @@
                             <dd>Seven feature modules each listed the Prisma client as their own provider. In NestJS that creates a separate instance per module, and each instance opened its own connection pool.</dd>
                             <dt>Fix</dt>
                             <dd>Made the existing database module global and removed the duplicate providers, so the whole app shares one client.</dd>
-                            <dt>Verified</dt>
+                            <dt>Result</dt>
                             <dd>Only the global database module provides the client now, so each instance runs a single shared connection pool.</dd>
                         </dl>
                     </article>
@@ -367,7 +360,7 @@
                             <dd>A safelist-generator plugin inherited from the original UI template wrote out every color and variant combination on each build, and Tailwind then had to compile all of it.</dd>
                             <dt>Fix</dt>
                             <dd>Removed the generator and let Tailwind's JIT scan the real source, then safelisted only the few classes actually built dynamically.</dd>
-                            <dt>Verified</dt>
+                            <dt>Result</dt>
                             <dd>The build now compiles only the classes the app uses. Follow-up changes restored the few dynamically built classes the scan couldn't see.</dd>
                         </dl>
                     </article>
@@ -380,7 +373,7 @@
                             <dd>A request referencing a record that didn't exist hit an unhandled foreign-key error and came back as a 500. The caller correctly treats 500s as transient, so it retried.</dd>
                             <dt>Fix</dt>
                             <dd>Mapped foreign-key violations to a 400 that names the failed reference, and left other errors unchanged.</dd>
-                            <dt>Verified</dt>
+                            <dt>Result</dt>
                             <dd>Unit tests cover both paths. Invalid requests now fail once, with a clear error.</dd>
                         </dl>
                     </article>

@@ -775,7 +775,7 @@ a.card:hover {
     border-top: 1px solid var(--border);
 }
 
-.older li {
+.older > li {
     margin: 0;
     padding: 1.25rem 0;
     border-bottom: 1px solid var(--border);
@@ -808,7 +808,7 @@ a.card:hover {
 }
 
 @media (max-width: 600px) {
-    .older li {
+    .older > li {
         grid-template-columns: 1fr;
     }
 
